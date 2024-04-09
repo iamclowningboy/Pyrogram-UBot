@@ -33,10 +33,10 @@ from .help import add_command_help
 
 modules = CMD_HELP
 alive_logo = (
-    gvarstatus("ALIVE_LOGO") or "https://telegra.ph/file/9dc4e335feaaf6a214818.jpg"
+    gvarstatus("ALIVE_LOGO") or "https://telegra.ph/file/13de2a6a1e3e724f5b456.jpg"
 )
 emoji = gvarstatus("ALIVE_EMOJI") or "⚡️"
-alive_text = gvarstatus("ALIVE_TEKS_CUSTOM") or "Hey, I am alive."
+alive_text = gvarstatus("ALIVE_TEKS_CUSTOM") or "bastard is online bb!!"
 
 
 @Client.on_message(filters.command(["alive", "awake"], cmd) & filters.me)
@@ -46,7 +46,7 @@ async def alive(client: Client, message: Message):
     send = client.send_video if alive_logo.endswith(".mp4") else client.send_photo
     uptime = await get_readable_time((time.time() - StartTime))
     man = (
-        f"**[PyroMan-Userbot](https://github.com/mrismanaziz/PyroMan-Userbot) is Up and Running.**\n\n"
+        f"**[BastardBot](tg://user?id={client.me.id}) is Up and Running.**\n\n"
         f"<b>{alive_text}</b>\n\n"
         f"{emoji} <b>Master :</b> {client.me.mention} \n"
         f"{emoji} <b>Modules :</b> <code>{len(modules)} Modules</code> \n"
@@ -54,7 +54,7 @@ async def alive(client: Client, message: Message):
         f"{emoji} <b>Python Version :</b> <code>{python_version()}</code> \n"
         f"{emoji} <b>Pyrogram Version :</b> <code>{versipyro}</code> \n"
         f"{emoji} <b>Bot Uptime :</b> <code>{uptime}</code> \n\n"
-        f"    **[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/{GROUP})** | **[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/{CHANNEL})** | **[𝗢𝘄𝗻𝗲𝗿](tg://user?id={client.me.id})**"
+        f"    **[𝗢𝘄𝗻𝗲𝗿](tg://user?id={client.me.id})**"
     )
     try:
         await asyncio.gather(
